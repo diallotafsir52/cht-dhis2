@@ -1,0 +1,31 @@
+{
+  "event": "<id>", // Presumably a unique event identifier. Use DHIS2-generated ID if not provided.
+  "orgUnit": "facility_id", // Organization Unit or Health Facility ID from CHT.
+  "program": "event_type", // DHIS2 Program ID, mapped from CHT's event type.
+  "eventDate": "visit_date", // The date when the event occurred, in `YYYY-MM-DDTHH:MM:SS.SSS` format.
+  "status": "event_status", // The status of the event (e.g., ACTIVE, COMPLETED).
+  "dataValues": [
+    {
+      "dataElement": "data_point_id_1", // Data Element ID from DHIS2.
+      "value": "data_point_value_1" // Collected value for the data element.
+    },
+    {
+      "dataElement": "data_point_id_2",
+      "value": "data_point_value_2"
+    },
+    // Add additional data elements as needed.
+  ],
+  "notes": [
+    {
+      "value": "notes", // Any comments or notes about the event from CHT.
+      "storedBy": "CHT_user", // Optional: Name of the user who added the note, if available.
+      "storedDate": "YYYY-MM-DDTHH:MM:SS.SSS" // Optional: Date when the note was added.
+    }
+  ],
+  "scheduledAt": "scheduled_date", // If the event is scheduled, provide the date and time.
+  "completedDate": "completed_date", // If applicable, the date and time when the event was completed.
+  "coordinate": {
+    "latitude": "latitude", // If available, latitude of the event's location.
+    "longitude": "longitude" // If available, longitude of the event's location.
+  }
+}
